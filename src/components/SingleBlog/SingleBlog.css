@@ -4,6 +4,31 @@
 }
 
 .author-img{
-    width: 40px;
+    width: 60px;
     border-radius: 50%;
+}
+.author-name{
+    font-size: 20px;
+    font-weight: 700;
+}
+.author-date{
+    font-size: 14px;
+    color: rgba(17, 17, 17, 0.6);
+}
+.read-time{
+    color: rgba(17, 17, 17, 0.6);
+}
+.blog-title{
+    width: 90%;
+    font-size: 3rem;
+    font-weight: 700;
+}
+.item-keyWord{
+    color: rgba(17, 17, 17, 0.6);
+}
+.mark-read{
+    text-decoration: underline;
+    color: #6047EC;
+    font-size: 18px;
+    font-weight: 600;
 }
