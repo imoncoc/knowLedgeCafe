@@ -1,0 +1,9 @@
+.blog-img{
+    max-height: 28rem;
+    width: 100%;
+}
+
+.author-img{
+    width: 40px;
+    border-radius: 50%;
+}

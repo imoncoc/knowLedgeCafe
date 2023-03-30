@@ -13,11 +13,11 @@ function App() {
       <Header></Header>
       <div className="container mx-auto">
         <div className="row">
-          <div className="home-container col-10 col-md-8 mx-auto">
+          <div className="home-container col-10 col-md-9 mx-auto">
             <Home></Home>
           </div>
 
-          <div className="cart-container col-10 col-md-4 mx-auto">
+          <div className="cart-container col-10 col-md-3 mx-auto">
             <Cart></Cart>
           </div>
         </div>
