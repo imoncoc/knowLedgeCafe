@@ -5,6 +5,8 @@ import './App.css'
 import Header from './components/Header/Header'
 import Cart from './components/Cart/Cart'
 import Home from './components/Home/Home'
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [watchTime, setWatchTime] = useState("");
@@ -21,6 +23,9 @@ function App() {
       localStorage.setItem("watchTime", time);
       setWatchTime(time);
     }
+    toast.success(" Successfully added in spent time !", {
+      position: toast.POSITION.TOP_CENTER,
+    });
   }
 
   const handleBookMark = (book) => {
@@ -28,12 +33,25 @@ function App() {
 
   const isBookMarkAvailable = JSON.parse(localStorage.getItem('bookMark'));
   if (isBookMarkAvailable && isBookMarkAvailable.length > 0) {
-      newBookMark.push(...isBookMarkAvailable, book);
-      setBookMark(newBookMark);
+    if(isBookMarkAvailable.includes(book)){
+      // console.log("All Ready added");
+      toast.warn(" All Ready added to the Book Mark !", {
+        position: toast.POSITION.TOP_CENTER,
+      });
+      return;
+    }
+      else{
+        newBookMark.push(...isBookMarkAvailable, book);
+        setBookMark(newBookMark);
+      }
   } else {
     newBookMark.push(book);
     setBookMark(book);
   }
+
+  toast.success(" Successfully added in bookmark blog !", {
+    position: toast.POSITION.TOP_CENTER,
+  });
 
   localStorage.setItem("bookMark", JSON.stringify(newBookMark));
 };
@@ -52,6 +70,7 @@ function App() {
 
           <div className="cart-container col-10 col-md-3 mx-auto">
             <Cart watchTime={watchTime} bookMark={bookMark}></Cart>
+            <ToastContainer></ToastContainer>
           </div>
         </div>
       </div>

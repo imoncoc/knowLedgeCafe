@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 
 const SingleBlog = ({ blog, handleWatchTime, handleBookMark }) => {
-  console.log(blog);
+  // console.log(blog);
   const dateAfterFormate = dateFormatter(blog.publish_date);
   return (
     <div className="mb-5">

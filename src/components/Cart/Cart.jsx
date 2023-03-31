@@ -2,11 +2,13 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import './Cart.css'
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Cart = ({ watchTime, bookMark }) => {
   const [time, setTime] = useState(watchTime);
   const [bookTitle, setBookTitle] = useState(bookMark)
-  console.log(bookMark.length)
+  // console.log(bookMark.length)
 
   useEffect(() => {
     let getWatchTimeFromStorage = localStorage.getItem("watchTime");
@@ -14,18 +16,15 @@ const Cart = ({ watchTime, bookMark }) => {
       getWatchTimeFromStorage = 0;
     }
     setTime(getWatchTimeFromStorage);
-
-    // let getBookMarkStorage = localStorage.getItem("bookMark");
-    // if (getBookMarkStorage === null) {
-    //   getBookMarkStorage = 0;
-    // }
-    // setBookTitle(getBookMarkStorage);
   }, [watchTime]);
-  console.log(typeof bookTitle)
+  // console.log(typeof bookTitle)
 
   const deleteSpentTime = () => {
     localStorage.removeItem("watchTime");
     setTime("0");
+    toast.warn(" Successfully Deleted from localStorage !", {
+      position: toast.POSITION.TOP_CENTER,
+    });
   };
 
   useEffect(() => {
@@ -48,6 +47,7 @@ const Cart = ({ watchTime, bookMark }) => {
             className="mx-2 text-danger spent-time-icon"
             icon={faXmark}
           ></FontAwesomeIcon>
+          <ToastContainer></ToastContainer>
         </p>
       </div>
 
