@@ -1,6 +1,8 @@
+ @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&display=swap');
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  /* font-family: 'Exo 2', sans-serif !important; */
+  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
+ 
   line-height: 1.5;
   font-weight: 400;
 
@@ -18,4 +20,5 @@
   margin: 0 !important;
   padding: 0 !important;
   box-sizing: border-box !important;
+  font-family: 'Exo 2', sans-serif !important;
 }

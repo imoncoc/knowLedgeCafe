@@ -3,7 +3,7 @@ import React from 'react';
 const FAQ = () => {
     return (
       <div className="my-5">
-        <h2 className='text-center my-5 text-primary faq-title'>FAQ Section</h2>
+        <h2 className="text-center my-5 text-primary faq-title">FAQ Section</h2>
         <div className="accordion" id="accordionExample">
           <div className="accordion-item">
             <h2 className="accordion-header">
@@ -82,7 +82,9 @@ const FAQ = () => {
                 <strong>The useEffect: </strong> The useEffect in react js
                 allows you to perform side effects in your components. The react
                 useEffect examples of side effects include retrieving data,
-                direct DOM updates, and timers. The second argument is optional.
+                direct DOM updates, and timers. The second argument is optional. Validating
+                an input while it's receiving characters is another great
+                application for useEffect .
               </div>
             </div>
           </div>

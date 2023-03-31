@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { dateFormatter } from '../../utilities/utilities';
 import './SingleBlog.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBookmark } from "@fortawesome/free-solid-svg-icons";
+import { faBookmark } from "@fortawesome/free-regular-svg-icons"; 
+
 
 const SingleBlog = ({ blog, handleWatchTime, handleBookMark }) => {
   // console.log(blog);
@@ -29,16 +30,18 @@ const SingleBlog = ({ blog, handleWatchTime, handleBookMark }) => {
                 {blog.read_time < 10 ? `0${blog.read_time}` : blog.read_time}{" "}
                 min read
               </span>
-              <FontAwesomeIcon
-                onClick={() => handleBookMark(blog.blogTitle)}
-                className="font-icon"
-                icon={faBookmark}
-              />
+              <span >
+                <FontAwesomeIcon
+                  onClick={() => handleBookMark(blog.blogTitle)}
+                  className="font-icon"
+                  icon={faBookmark}
+                />
+              </span>
             </p>
           </div>
         </div>
         <h3 className="blog-title mb-4">{blog.blogTitle}</h3>
-        <div className="d-flex">
+        <div className="d-flex mb-2">
           {blog.keyWord.map((item) => (
             <p className="me-3 item-keyWord">{item}</p>
           ))}
@@ -50,6 +53,7 @@ const SingleBlog = ({ blog, handleWatchTime, handleBookMark }) => {
           Mark as read
         </a>
       </div>
+      <div className="break-div"></div>
     </div>
   );
 };

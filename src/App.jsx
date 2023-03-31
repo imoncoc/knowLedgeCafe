@@ -24,7 +24,7 @@ function App() {
       localStorage.setItem("watchTime", time);
       setWatchTime(time);
     }
-    toast.success(" Successfully added in spent time !", {
+    toast.success("\xa0\xa0Successfully added in spent time !", {
       position: toast.POSITION.TOP_CENTER,
     });
   }
@@ -36,7 +36,7 @@ function App() {
   if (isBookMarkAvailable && isBookMarkAvailable.length > 0) {
     if(isBookMarkAvailable.includes(book)){
       // console.log("All Ready added");
-      toast.warn(" All Ready added to the Book Mark !", {
+      toast.error("\xa0\xa0All Ready added to the Book Mark !", {
         position: toast.POSITION.TOP_CENTER,
       });
       return;
@@ -50,7 +50,7 @@ function App() {
     setBookMark(book);
   }
 
-  toast.success(" Successfully added in bookmark blog !", {
+  toast.success(`\xa0\xa0Successfully added in bookmark blog !`, {
     position: toast.POSITION.TOP_CENTER,
   });
 

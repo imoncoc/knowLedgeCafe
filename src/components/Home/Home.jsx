@@ -3,7 +3,6 @@ import SingleBlog from '../SingleBlog/SingleBlog';
 
 const Home = ({ handleWatchTime, handleBookMark }) => {
   const [blogs, setBlogs] = useState([]);
-
   useEffect(() => {
     fetch("data.json")
       .then((res) => res.json())
