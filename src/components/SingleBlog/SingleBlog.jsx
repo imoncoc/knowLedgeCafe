@@ -4,7 +4,7 @@ import './SingleBlog.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 
-const SingleBlog = ({ blog, handleWatchTime }) => {
+const SingleBlog = ({ blog, handleWatchTime, handleBookMark }) => {
   console.log(blog);
   const dateAfterFormate = dateFormatter(blog.publish_date);
   return (
@@ -44,7 +44,9 @@ const SingleBlog = ({ blog, handleWatchTime }) => {
           ))}
         </div>
 
-        <p className="mark-read mt-2">Mark as Read</p>
+        <p onClick={() => handleBookMark(blog.blogTitle)} className="mark-read mt-2">
+          Mark as Read
+        </p>
       </div>
     </div>
   );

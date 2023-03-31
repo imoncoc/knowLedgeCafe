@@ -8,6 +8,7 @@ import Home from './components/Home/Home'
 
 function App() {
   const [watchTime, setWatchTime] = useState("");
+  const [bookMark, setBookMark] = useState([]);
   const handleWatchTime = (time) =>{
     const previousWatchTime = JSON.parse(localStorage.getItem("watchTime"));
 
@@ -22,7 +23,20 @@ function App() {
     }
   }
 
-  
+  const handleBookMark = (book) => {
+      let newBookMark = [];
+
+  const isBookMarkAvailable = JSON.parse(localStorage.getItem('bookMark'));
+  if (isBookMarkAvailable && isBookMarkAvailable.length > 0) {
+      newBookMark.push(...isBookMarkAvailable, book);
+      setBookMark(newBookMark);
+  } else {
+    newBookMark.push(book);
+    setBookMark(book);
+  }
+
+  localStorage.setItem("bookMark", JSON.stringify(newBookMark));
+};
 
   return (
     <div className="App">
@@ -30,16 +44,19 @@ function App() {
       <div className="container mx-auto">
         <div className="row">
           <div className="home-container col-10 col-md-9 mx-auto">
-            <Home handleWatchTime={handleWatchTime}></Home>
+            <Home
+              handleWatchTime={handleWatchTime}
+              handleBookMark={handleBookMark}
+            ></Home>
           </div>
 
           <div className="cart-container col-10 col-md-3 mx-auto">
-            <Cart watchTime={watchTime}></Cart>
+            <Cart watchTime={watchTime} bookMark={bookMark}></Cart>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default App
