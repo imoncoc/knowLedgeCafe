@@ -7,6 +7,7 @@ import Cart from './components/Cart/Cart'
 import Home from './components/Home/Home'
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import FAQ from './components/FAQ/FAQ'
 
 function App() {
   const [watchTime, setWatchTime] = useState("");
@@ -66,6 +67,7 @@ function App() {
               handleWatchTime={handleWatchTime}
               handleBookMark={handleBookMark}
             ></Home>
+            <FAQ></FAQ>
           </div>
 
           <div className="cart-container col-10 col-md-3 mx-auto">

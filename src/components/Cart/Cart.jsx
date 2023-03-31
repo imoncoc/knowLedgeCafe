@@ -19,13 +19,13 @@ const Cart = ({ watchTime, bookMark }) => {
   }, [watchTime]);
   // console.log(typeof bookTitle)
 
-  const deleteSpentTime = () => {
-    localStorage.removeItem("watchTime");
-    setTime("0");
-    toast.warn(" Successfully Deleted from localStorage !", {
-      position: toast.POSITION.TOP_CENTER,
-    });
-  };
+  // const deleteSpentTime = () => {
+  //   localStorage.removeItem("watchTime");
+  //   setTime("0");
+  //   toast.warn(" Successfully Deleted from localStorage !", {
+  //     position: toast.POSITION.TOP_CENTER,
+  //   });
+  // };
 
   useEffect(() => {
     let getBookMarkStorage = JSON.parse(localStorage.getItem("bookMark"));
@@ -42,22 +42,23 @@ const Cart = ({ watchTime, bookMark }) => {
       <div className="spent-time text-center">
         <p className="p-3 spent-time-text">
           Spent time on read: {time} min
-          <FontAwesomeIcon
-            onClick={deleteSpentTime}
-            className="mx-2 text-danger spent-time-icon"
-            icon={faXmark}
-          ></FontAwesomeIcon>
-          <ToastContainer></ToastContainer>
+          
         </p>
+          <ToastContainer></ToastContainer>
       </div>
 
       <div className="book-mark mt-3 pb-3">
         <p className="book-mark-text pt-3 ps-3">
-          BookMarked Blog: {bookTitle.length? bookTitle.length: 0}
+          BookMarked Blog: {bookTitle.length ? bookTitle.length : 0}
         </p>
         {
-         bookTitle.length > 0 && bookTitle.map((book)=><div className='book-mark-item m-3 p-3'><p className='book-mark-item-text'>{book}</p></div>)
-        }
+        bookTitle.length > 0 &&
+          bookTitle.map((book, index) => (
+            <div className="book-mark-item m-3 p-3">
+              <p className="book-mark-item-text">{book}</p>
+            </div>
+          ))
+          }
       </div>
     </div>
   );

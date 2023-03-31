@@ -43,13 +43,12 @@ const SingleBlog = ({ blog, handleWatchTime, handleBookMark }) => {
             <p className="me-3 item-keyWord">{item}</p>
           ))}
         </div>
-
-        <p
-          onClick={() => handleWatchTime(blog.read_time)}
+        <a
           className="mark-read mt-2"
+          onClick={() => handleWatchTime(blog.read_time)}
         >
-          Mark as Read
-        </p>
+          Mark as read
+        </a>
       </div>
     </div>
   );
