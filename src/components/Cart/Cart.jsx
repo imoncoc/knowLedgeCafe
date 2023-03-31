@@ -51,18 +51,12 @@ const Cart = ({ watchTime, bookMark }) => {
         </p>
       </div>
 
-      <div className="book-mark mt-3 pb-1">
+      <div className="book-mark mt-3 pb-3">
         <p className="book-mark-text pt-3 ps-3">
-          BookMarked Blog: {bookTitle.length}
+          BookMarked Blog: {bookTitle.length? bookTitle.length: 0}
         </p>
-        
-        {/* <div className="book-mark-item m-3 p-3">
-          <p className="book-mark-item-text">
-            Master Microsoft Power Platform and Become an In-Demand!
-          </p>
-        </div> */}
         {
-         bookTitle && bookTitle.map((book)=><div className='book-mark-item m-3 p-3'><p className='book-mark-item-text'>{book}</p></div>)
+         bookTitle.length > 0 && bookTitle.map((book)=><div className='book-mark-item m-3 p-3'><p className='book-mark-item-text'>{book}</p></div>)
         }
       </div>
     </div>

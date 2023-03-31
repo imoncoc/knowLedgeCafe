@@ -30,7 +30,7 @@ const SingleBlog = ({ blog, handleWatchTime, handleBookMark }) => {
                 min read
               </span>
               <FontAwesomeIcon
-                onClick={() => handleWatchTime(blog.read_time)}
+                onClick={() => handleBookMark(blog.blogTitle)}
                 className="font-icon"
                 icon={faBookmark}
               />
@@ -44,7 +44,10 @@ const SingleBlog = ({ blog, handleWatchTime, handleBookMark }) => {
           ))}
         </div>
 
-        <p onClick={() => handleBookMark(blog.blogTitle)} className="mark-read mt-2">
+        <p
+          onClick={() => handleWatchTime(blog.read_time)}
+          className="mark-read mt-2"
+        >
           Mark as Read
         </p>
       </div>
