@@ -26,20 +26,21 @@ const SingleBlog = ({blog}) => {
             <div>
               <p>
                 <span className="me-2 read-time">
-                  {blog.read_time} min read
+                  {blog.read_time < 10 ? `0${blog.read_time}` : blog.read_time}{" "}
+                  min read
                 </span>
-                <FontAwesomeIcon icon={faBookmark} />
+                <FontAwesomeIcon className="font-icon" icon={faBookmark} />
               </p>
             </div>
           </div>
           <h3 className="blog-title mb-4">{blog.blogTitle}</h3>
-          <div className='d-flex'>
+          <div className="d-flex">
             {blog.keyWord.map((item) => (
-              <p className='me-3 item-keyWord'>{item}</p>
+              <p className="me-3 item-keyWord">{item}</p>
             ))}
           </div>
 
-          <p className='mark-read'>Mark as Read</p>
+          <p className="mark-read mt-2">Mark as Read</p>
         </div>
       </div>
     );

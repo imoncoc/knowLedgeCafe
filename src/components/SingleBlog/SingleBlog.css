@@ -23,6 +23,9 @@
     font-size: 3rem;
     font-weight: 700;
 }
+.font-icon{
+    cursor: pointer;
+}
 .item-keyWord{
     color: rgba(17, 17, 17, 0.6);
 }
@@ -31,4 +34,5 @@
     color: #6047EC;
     font-size: 18px;
     font-weight: 600;
+    cursor: pointer;
 }
